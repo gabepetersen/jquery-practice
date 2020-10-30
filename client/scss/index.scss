@@ -1,4 +1,28 @@
+$text-font: "Courier New", Courier, monospace;
+$heading-font: "Verdana, Geneva, sans-serif";
+
 body {
-  background-color: #999999;
-  color: red;
+  font-family: $text-font;
+  margin: 2em 2em 1em 2em;
+  background-color: #c5c5c5;
+}
+header, footer {
+  text-align: center;
+  font-family: $heading-font;
+}
+section {
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+article {
+  padding: 1em;
+  margin: 1em;
+  background-color: #d9ddf3;
+}
+h3 {
+  margin: 0;
+}
+.highlighted {
+  background-color: purple;
 }

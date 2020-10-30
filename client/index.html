@@ -6,7 +6,101 @@
     <link rel="stylesheet" type="text/css" href="css/index.css"></link>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <header>
+      <h1>Examples of jQuery & Native JS DOM manipulation</h1>
+      <p>Based on <a target="_blank" href="https://www.w3schools.com/jquery/jquery_ref_overview.asp">w3schools documentation</a></p>
+    </header>
+    <main>
+      <section> 
+        <article>
+          <h3>Selectors</h3>
+          <button onClick="highlight($('#coolbutton'))">$('#coolbutton')</button>
+          <button onClick="highlight($('.coolbuttons'))">$('.coolbuttons')</button>
+          <button onClick="highlight($('p'))">$('p')</button>
+          <button onClick="highlight($('div:first'))">$('div:first')</button>
+          <button onClick="highlight($('div:last'))">$('div:last')</button>
+          <button onClick="highlight($('div:even'))">$('div:even')</button>
+          <button onClick="highlight($('div:first-child'))">$('div:first-child')</button>
+          <button onClick="highlight($('div:nth-child(2)'))">$('div:nth-child(2)')</button>
+          <button onClick="highlight($('div:nth-last-child(2)'))">$('div:nth-last-child(2)')</button>
+          <button onClick="highlight($('div p'))">$('div p')</button>
+          <button onClick="highlight($('ul li:eq(4)'))">$('ul li:eq(4)')</button>
+          <button onClick="highlight($('ul li:gt(2)'))">$('ul li:gt(2)')</button>
+          <button onClick="highlight($(':not(div)'))">$(':not(div)')</button>
+          <button onClick="highlight($(':header'))">$(':header')</button>
+          <button>$()</button>
+          <button></button>
+          <button></button>
+        </article>
+        <article>
+          Selectors Code
+        </article>
+      </section>
+      <section>
+        <article>
+          Events
+        </article>
+        <article>
+          Events Code
+        </article>
+      </section>
+      <section>
+        <article>
+          Effects
+        </article>
+        <article>
+          Effects Code
+        </article>
+      </section>
+      <section>
+        <article>
+          HTML/CSS
+        </article>
+        <article>
+          HTML/CSS code
+        </article>
+      </section>
+      <section>
+        <article>
+          Traversing
+        </article>
+        <article>
+          Traversing Code
+        </article>
+      </section>
+      <section>
+        <article>
+          AJAX
+        </article>
+        <article>
+          AJAX Code
+        </article>
+      </section>
+      <section>
+        <article>
+          Misc
+        </article>
+        <article>
+          Misc Code
+        </article>
+      </section>
+      <section>
+        <article>
+          Properties
+        </article>
+        <article>
+          Properties Code
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>Thanks for reading!</p>
+    </footer>
   </body>
   <script src="index.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+  </script>
 </html>
