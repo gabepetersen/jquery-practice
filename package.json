@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "npm-run-all --parallel compile-scss compile-app",
+    "dev": "npm-run-all --parallel watch-app watch-scss",
+    "scssWatch": "node-sass -w client/scss -o client/css",
+    "compile-app": "node ./bin/www",
+    "compile-scss": "node-sass client/scss -o client/css",
+    "watch-scss": "nodemon -e scss --watch client/scss -x \"npm run compile-scss\"",
+    "watch-app": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -11,6 +17,10 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
