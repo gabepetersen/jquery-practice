@@ -11,39 +11,71 @@
       <p>Based on <a target="_blank" href="https://www.w3schools.com/jquery/jquery_ref_overview.asp">w3schools documentation</a></p>
     </header>
     <main>
+      <!-- This is the Selectors Section -->
       <section> 
-        <article>
-          <h3>Selectors</h3>
-          <button onClick="highlight($('#coolbutton'))">$('#coolbutton')</button>
-          <button onClick="highlight($('.coolbuttons'))">$('.coolbuttons')</button>
-          <button onClick="highlight($('p'))">$('p')</button>
-          <button onClick="highlight($('div:first'))">$('div:first')</button>
-          <button onClick="highlight($('div:last'))">$('div:last')</button>
-          <button onClick="highlight($('div:even'))">$('div:even')</button>
-          <button onClick="highlight($('div:first-child'))">$('div:first-child')</button>
-          <button onClick="highlight($('div:nth-child(2)'))">$('div:nth-child(2)')</button>
-          <button onClick="highlight($('div:nth-last-child(2)'))">$('div:nth-last-child(2)')</button>
-          <button onClick="highlight($('div p'))">$('div p')</button>
-          <button onClick="highlight($('ul li:eq(4)'))">$('ul li:eq(4)')</button>
-          <button onClick="highlight($('ul li:gt(2)'))">$('ul li:gt(2)')</button>
-          <button onClick="highlight($(':not(div)'))">$(':not(div)')</button>
-          <button onClick="highlight($(':header'))">$(':header')</button>
-          <button>$()</button>
-          <button></button>
-          <button></button>
+        <article class="selectors-buttons">
+          <h3>Selector Buttons</h3>
+          <button onClick="highlight($('.selectors :header'))">$('.selectors :header')</button>
+          <button onClick="highlight($('.selectors #coolestbutton'))">$('.selectors #coolbutton')</button>
+          <button onClick="highlight($('.selectors .coolbuttons'))">$('.selectors .coolbuttons')</button>
+          <button onClick="highlight($('.selectors p'))">$('.selectors p')</button>
+          <button onClick="highlight($('.selectors div:first'))">$('.selectors div:first')</button>
+          <button onClick="highlight($('.selectors div:last'))">$('.selectors div:last')</button>
+          <button onClick="highlight($('.selectors div:even'))">$('.selectors div:even')</button>
+          <button onClick="highlight($('.selectors :first-child'))">$('.selectors :first-child')</button>
+          <button onClick="highlight($('.selectors div:first-of-type'))">$('.selectors div:first-of-type')</button>
+          <button onClick="highlight($('.selectors :nth-child(3)'))">$('.selectors :nth-child(3)')</button>
+          <em>Note: The selector below will not work because the third child in .selectors is not a div</em>
+          <button onClick="highlight($('.selectors div:nth-child(3)'))">$('.selectors div:nth-child(3)')</button>
+          <button onClick="highlight($('.selectors :nth-last-child(3)'))">$('.selectors :nth-last-child(3)')</button>
+          <button onClick="highlight($('.selectors div p'))">$('.selectors div p')</button>
+          <button onClick="highlight($('.selectors ul li:eq(3)'))">$('.selectors ul li:eq(3)')</button>
+          <button onClick="highlight($('.selectors ul li:gt(0)'))">$('.selectors ul li:gt(0)')</button>
+          <button onClick="highlight($('.selectors :not(div)'))">$('.selectors :not(div)')</button>
+          <button onClick="highlight($('.selectors p:parent'))">$('.selectors p:parent')</button>
+          <button onClick="highlight($('.selectors :has(li)'))">$('.selectors :has(li)')</button>
+          <button onClick="highlight($('.selectors :input'))">$('.selectors :input')</button>
+          <button onClick="highlight($('.selectors :password'))">$('.selectors :password')</button>
         </article>
-        <article>
-          Selectors Code
+        <article class="selectors">
+          <h3>Selectors Examples (.selectors)</h3>
+          <div>First Div</div>
+          <button class="coolbuttons">.coolbuttons</button>
+          <button class="coolbuttons" id="coolestbutton">.coolbuttons #coolestbutton</button>
+          <div>Second Div</div>
+          <p>Paragraph</p>
+          <div>Third Div</div>
+          <div>Fourth Div</div>
+          <div>
+            Fifth Div
+            <p>Paragraph inside Div</p>
+          </div>
+          List
+          <ul>
+            <li>First Item</li>
+            <li>Second Item</li>
+            <li>Third Item</li>
+            <li>Fourth Item</li>
+          </ul>
+          <div>Sixth Div</div>
+          <input type="password" placeholder="password">
+          <div>Last Div</div>
         </article>
       </section>
+
+      <!-- Events Section -->
       <section>
         <article>
-          Events
+          <h3>Event Types</h3>
+          <p></p>
         </article>
         <article>
-          Events Code
+          <h3>Events Examples</h3>
+          <p>Page Clicked At: <span class="pageclick"></span></p>
         </article>
       </section>
+
+
       <section>
         <article>
           Effects
@@ -97,10 +129,19 @@
       <p>Thanks for reading!</p>
     </footer>
   </body>
-  <script src="index.js"></script>
   <script
     src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous">
+    crossorigin="anonymous">  
+  </script>
+  <script src="index.js"></script>
+  <script>
+    $( document ).ready(function() {
+      readyJquery();
+    });
+ 
+    $( window ).on( "load", function() {
+      readyWindow();
+    });
   </script>
 </html>

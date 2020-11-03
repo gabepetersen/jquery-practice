@@ -21,4 +21,13 @@ h3 {
   margin: 0; }
 
 .highlighted {
-  background-color: purple; }
+  border: 3px solid #3df35b; }
+
+.selectors button, .selectors-buttons button {
+  display: block; }
+
+.selectors *, .selectors-buttons * {
+  margin: 8px 4px;
+  padding: 2px;
+  background-color: #fafafa;
+  border-radius: 5px; }
