@@ -8,7 +8,7 @@ header, footer {
   font-family: "Verdana, Geneva, sans-serif"; }
 
 section {
-  background-color: #ffffff;
+  background-color: #fafafa;
   display: grid;
   grid-template-columns: 1fr 1fr; }
 
@@ -30,4 +30,16 @@ h3 {
   margin: 8px 4px;
   padding: 2px;
   background-color: #fafafa;
-  border-radius: 5px; }
+  border-radius: 8px; }
+
+.events div, .events-examples div {
+  background-color: #fafafa;
+  padding: 4px; }
+
+.events *, .events-examples * {
+  border-radius: 8px;
+  margin: 8px 4px; }
+
+#hoversection, #clicksection {
+  background-color: #c5c5c5;
+  padding: 15px; }

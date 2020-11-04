@@ -65,16 +65,34 @@
 
       <!-- Events Section -->
       <section>
-        <article>
+        <article class="events">
           <h3>Event Types</h3>
-          <p></p>
+          <div>
+            <h4>.on('event', callback(event) {...})</h4>
+            <p>.on() event binder is currently the way to bind events to selected elements. All that is needed is to pass the type of event and use the callback to change things. Since JQuery 3.0, all shorthand events are deprecated :(</p><br />
+            <p>To the right we see that the <em>'click', 'mouseenter', 'mouseleave', 'resize', 'scroll', and 'keypress' events are being used</em></p><br />
+            <p>Note 1: Instead of keypress, you can also use 'keyup' or 'keydown' for specific button presses</p><br />
+            <p>Note 2: to access the data for some event callbacks, you can find a lot of the data in event.originalEvent</p><br />
+            <p>Note 3: There are also document events: 'load' and 'ready' that inform about when assets are loaded</p><br />
+          </div>
         </article>
-        <article>
+        <article class="events-examples">
           <h3>Events Examples</h3>
-          <p>Page Clicked At: <span class="pageclick"></span></p>
+          <div>
+            <p>Page Clicked At: <span id="pageclick"></span></p>
+            <div id="hoversection">Hover Over Me!</div>
+            <p>Hover Event: <span id="mousehoverlisten"></span></p>
+            <p>Resize Event: <span id="resizelisten"></span></p>
+            <p>Try to resize the browser window to see the output above</p>
+            <p>Scroll Event: <span id="scrolllisten"></span></p>
+            <input id="keyinput" type="text">
+            <p>Keypress Event: <span id="keypresslisten"></span></p>
+            <div id="clicksection">Click Hold and Release Here!</div>
+            <p>Mouse Press Event: <span id="mousepresslisten"></span></p>
+          </div>
+        
         </article>
       </section>
-
 
       <section>
         <article>
@@ -141,7 +159,7 @@
     });
  
     $( window ).on( "load", function() {
-      readyWindow();
+      readyWindow(window);
     });
   </script>
 </html>
