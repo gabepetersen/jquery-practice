@@ -30,8 +30,12 @@ h3 {
   background-color: #8be69a !important;
   transition: all 0.1s ease-in-out; }
 
+.bluebackground {
+  background-color: blue !important; }
+
 .description button, .examples button {
-  display: block; }
+  display: block;
+  box-shadow: 1px 1px #333333; }
 
 .description div, .examples div {
   background-color: #fafafa;
@@ -45,6 +49,9 @@ h3 {
 .description ul, .examples ul {
   background-color: #fafafa; }
 
+.description span, .examples span {
+  font-weight: 700; }
+
 .effects div {
   height: 75px; }
 
@@ -54,3 +61,11 @@ h3 {
 
 #animateeffectdiv {
   position: relative; }
+
+#csstextexample {
+  background-color: peachpuff;
+  border: 15px solid #333333;
+  padding: 10px;
+  position: relative;
+  left: 20px;
+  top: 20px; }

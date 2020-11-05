@@ -22,6 +22,7 @@ function readyJquery() {
   bindEvents();
   // bind all effects we need for example
   bindEffects();
+  bindCSS();
 }
 
 /**
@@ -73,11 +74,12 @@ function bindEffects() {
   $('#fadeoutbutton').on('click', function() {
     $('#fadeeffectdiv').fadeOut('slow')
   })
-  // animate
+  // animate the box
   $('#animatebutton').on('click', function() {
     $('#animateeffectdiv').text("changing height...");
     $('#animateeffectdiv')
       .animate({ height: '100px' }, 2000, function() {
+        // 'this' refers to the original caller object, which is <div id='animateeffectdiv'>...</div>
         $(this).text("changing width...");
       })
       .animate({ width: '150px' }, 2000, function() {
@@ -87,11 +89,38 @@ function bindEffects() {
       .animate({ left: '+=200' }, 2000, function() {
         $(this).text('fading out...');
       })
-      .animate({ opacity: 0 }, 2000);
+      .animate({ opacity: 0 }, 2000)
+      .animate({ left: '-=200', width: '300px', height: '150px' }, 500, function() {
+        $(this).text('I\'m Back!');
+      })
+      .animate({ opacity: 1 }, 2000);
   });
   $('#slidebutton').on('click', function() {
     $('#slideeffectdiv').slideToggle(1000);
   })
+}
+
+/**
+ * gets css data stuff from html elements
+ */
+function bindCSS() {
+  $('#csstextexample').on('mousedown mousemove', function() {
+    $('#csswidth').text( `${$(this).width()}, ${$(this).height()}`);
+    $('#cssinnerwidth').text( `${$(this).innerWidth()}, ${$(this).innerHeight()}`);
+    $('#cssouterwidth').text( `${$(this).outerWidth()}, ${$(this).outerHeight()}`);
+    $('#cssoffset').text( `left: ${$(this).offset().left}, top: ${$(this).offset().top}`);
+    $('#csshasclass').text( `${$(this).hasClass('cooltextbox')}` );
+    $('#cssaddclass').on('click', function() {
+      $('#csstextexample').addClass('bluebackground');
+      $('#csscss').text(`${$('#csstextexample').css('background-color')}`);
+    });
+    $('#cssremoveclass').on('click', function() {
+      $('#csstextexample').removeClass('bluebackground');
+      $('#csscss').text(`${$('#csstextexample').css('background-color')}`);
+    });
+    $('#csscss').text(`${$(this).css('background-color')}`);
+  })
+   
 }
 
 function readyWindow(windowRef) {
