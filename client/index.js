@@ -1,4 +1,8 @@
 
+/**
+ * Function to highlight a jquery selection
+ * @param element - a string referencing element/s on the page
+ */
 function highlight(element) {
   if($(element)) {
     $(element).addClass('highlighted');
@@ -10,12 +14,20 @@ function highlight(element) {
   }
 }
 
+/**
+ * This gets called when document is ready
+ */
 function readyJquery() {
+  // bind all the events we need for example
   bindEvents();
-  
+  // bind all effects we need for example
+  bindEffects();
 }
+
+/**
+ * bind events like page click, resize, mousedown, scroll,  and keypress
+ */
 function bindEvents() {
-  // .on events
   $('*').on('click', function(event) {
     $('#pageclick').text(event.pageX + ", " + event.pageY + " pixels");
   });
@@ -39,10 +51,49 @@ function bindEvents() {
   });
   $('#clicksection').on('mouseup', function() {
     $('#mousepresslisten').text('Mouse Released');
-  })
-  
-  
+  });
 }
+/**
+ * This is the stuff demonstrating the jquery animations
+ */
+function bindEffects() {
+  $('#showbutton').on('click', function() {
+    $('#displayeffectdiv').show('slow', function() {
+      console.log("div shown");
+    });
+  });
+  $('#hidebutton').on('click', function() {
+    $('#displayeffectdiv').hide(2000, function() {
+      console.log("div hide");
+    })
+  });
+  $('#fadeinbutton').on('click', function() {
+    $('#fadeeffectdiv').fadeIn(1500);
+  })
+  $('#fadeoutbutton').on('click', function() {
+    $('#fadeeffectdiv').fadeOut('slow')
+  })
+  // animate
+  $('#animatebutton').on('click', function() {
+    $('#animateeffectdiv').text("changing height...");
+    $('#animateeffectdiv')
+      .animate({ height: '100px' }, 2000, function() {
+        $(this).text("changing width...");
+      })
+      .animate({ width: '150px' }, 2000, function() {
+        $(this).text("delaying 2 seconds and then move left...");
+      })
+      .delay(2000)
+      .animate({ left: '+=200' }, 2000, function() {
+        $(this).text('fading out...');
+      })
+      .animate({ opacity: 0 }, 2000);
+  });
+  $('#slidebutton').on('click', function() {
+    $('#slideeffectdiv').slideToggle(1000);
+  })
+}
+
 function readyWindow(windowRef) {
-  // .resize event
+  // maybe do something
 }

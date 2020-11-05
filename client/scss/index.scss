@@ -5,7 +5,11 @@ $background-1-color: #fafafa;
 $background-2-color: #d9ddf3;
 $background-3-color: #c5c5c5;
 $highlight-color: #3df35b;
+$highlight-background: #8be69a;
 
+/**
+ *  Here is some normal tag styling
+ */
 body {
   font-family: $text-font;
   margin: 2em 2em 1em 2em;
@@ -13,7 +17,7 @@ body {
 }
 header, footer {
   text-align: center;
-  font-family: $heading-font;
+  // font-family: $heading-font;
 }
 section {
   background-color: $background-1-color;
@@ -28,32 +32,43 @@ article {
 h3 {
   margin: 0;
 }
+
+/**
+ * Specific Styles
+ */
 .highlighted {
-  border: 3px solid $highlight-color;
+  border: 2px solid #333333;
+  background-color: $highlight-background !important;
+  transition: all 0.1s ease-in-out;
 }
-.selectors, .selectors-buttons {
+.description, .examples{
   & button {
     display: block;
   }
-  & * {
-    margin: 8px 4px;
-    padding: 2px;
-    background-color: $background-1-color;
-    border-radius: 8px;
-  }
-}
-
-.events, .events-examples {
   & div {
     background-color: $background-1-color;
     padding: 4px;
   }
   & * {
-    border-radius: 8px;
     margin: 8px 4px;
+    padding: 2px;
+    // background-color: $background-1-color;
+    border-radius: 10px;
+  }
+  & ul {
+    background-color: $background-1-color;
   }
 }
+.effects {
+  & div {
+    height: 75px;
+  }
+}
+
 #hoversection, #clicksection {
   background-color: $background-3-color;
   padding: 15px;
+}
+#animateeffectdiv {
+  position: relative;
 }

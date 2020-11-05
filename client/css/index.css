@@ -1,11 +1,13 @@
+/**
+ *  Here is some normal tag styling
+ */
 body {
   font-family: "Courier New", Courier, monospace;
   margin: 2em 2em 1em 2em;
   background-color: #c5c5c5; }
 
 header, footer {
-  text-align: center;
-  font-family: "Verdana, Geneva, sans-serif"; }
+  text-align: center; }
 
 section {
   background-color: #fafafa;
@@ -20,26 +22,35 @@ article {
 h3 {
   margin: 0; }
 
+/**
+ * Specific Styles
+ */
 .highlighted {
-  border: 3px solid #3df35b; }
+  border: 2px solid #333333;
+  background-color: #8be69a !important;
+  transition: all 0.1s ease-in-out; }
 
-.selectors button, .selectors-buttons button {
+.description button, .examples button {
   display: block; }
 
-.selectors *, .selectors-buttons * {
-  margin: 8px 4px;
-  padding: 2px;
-  background-color: #fafafa;
-  border-radius: 8px; }
-
-.events div, .events-examples div {
+.description div, .examples div {
   background-color: #fafafa;
   padding: 4px; }
 
-.events *, .events-examples * {
-  border-radius: 8px;
-  margin: 8px 4px; }
+.description *, .examples * {
+  margin: 8px 4px;
+  padding: 2px;
+  border-radius: 10px; }
+
+.description ul, .examples ul {
+  background-color: #fafafa; }
+
+.effects div {
+  height: 75px; }
 
 #hoversection, #clicksection {
   background-color: #c5c5c5;
   padding: 15px; }
+
+#animateeffectdiv {
+  position: relative; }

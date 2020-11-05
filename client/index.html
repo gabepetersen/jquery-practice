@@ -7,14 +7,18 @@
   </head>
   <body>
     <header>
-      <h1>Examples of jQuery & Native JS DOM manipulation</h1>
-      <p>Based on <a target="_blank" href="https://www.w3schools.com/jquery/jquery_ref_overview.asp">w3schools documentation</a></p>
+      <h1>All the cool examples of jQuery!!!</h1>
+      <p>Based on the following documentations: 
+        <a target="_blank" href="https://api.jquery.com/">jQuery</a>, 
+        <a target="_blank" href="https://www.w3schools.com/jquery/jquery_ref_overview.asp">w3schools</a>, 
+        <a target="_blank" href="https://www.snoopcode.com/jquery/">SnoopCode</a>
+      </p>
     </header>
     <main>
       <!-- This is the Selectors Section -->
       <section> 
-        <article class="selectors-buttons">
-          <h3>Selector Buttons</h3>
+        <article class="description">
+          <h3>Selectors (press the buttons)</h3>
           <button onClick="highlight($('.selectors :header'))">$('.selectors :header')</button>
           <button onClick="highlight($('.selectors #coolestbutton'))">$('.selectors #coolbutton')</button>
           <button onClick="highlight($('.selectors .coolbuttons'))">$('.selectors .coolbuttons')</button>
@@ -37,13 +41,13 @@
           <button onClick="highlight($('.selectors :input'))">$('.selectors :input')</button>
           <button onClick="highlight($('.selectors :password'))">$('.selectors :password')</button>
         </article>
-        <article class="selectors">
+        <article class="examples selectors">
           <h3>Selectors Examples (.selectors)</h3>
           <div>First Div</div>
           <button class="coolbuttons">.coolbuttons</button>
           <button class="coolbuttons" id="coolestbutton">.coolbuttons #coolestbutton</button>
           <div>Second Div</div>
-          <p>Paragraph</p>
+          <p>This is a paragraph</p>
           <div>Third Div</div>
           <div>Fourth Div</div>
           <div>
@@ -65,8 +69,8 @@
 
       <!-- Events Section -->
       <section>
-        <article class="events">
-          <h3>Event Types</h3>
+        <article class="description">
+          <h3>Event Explaination</h3>
           <div>
             <h4>.on('event', callback(event) {...})</h4>
             <p>.on() event binder is currently the way to bind events to selected elements. All that is needed is to pass the type of event and use the callback to change things. Since JQuery 3.0, all shorthand events are deprecated :(</p><br />
@@ -76,7 +80,7 @@
             <p>Note 3: There are also document events: 'load' and 'ready' that inform about when assets are loaded</p><br />
           </div>
         </article>
-        <article class="events-examples">
+        <article class="examples">
           <h3>Events Examples</h3>
           <div>
             <p>Page Clicked At: <span id="pageclick"></span></p>
@@ -89,17 +93,35 @@
             <p>Keypress Event: <span id="keypresslisten"></span></p>
             <div id="clicksection">Click Hold and Release Here!</div>
             <p>Mouse Press Event: <span id="mousepresslisten"></span></p>
-          </div>
-        
+          </div>      
         </article>
       </section>
 
       <section>
-        <article>
-          Effects
+        <article class="description">
+          <h3>Effects (press buttons)</h3>
+          <p>These basically changes display: none to block <em>(you can also use .toggle)</em></p>
+          <button id="showbutton">Show the Div!!!</button>
+          <button id="hidebutton">Hide the Div!!</button>
+          
+          <p>These basically animates css opacity<em>(you can also use .fadeTo() or .fadeToggle())</em></p>
+          <button id="fadeinbutton">Fade in second Div</button>
+          <button id="fadeoutbutton">Fade out second Div</button>
+          
+          <p>You can do incremental animation - using the .animate() property you can apply custom css changes, and with .delay() you can deplay the animations</p>
+          <button id="animatebutton">Animate the Third Div</button>
+          
+          <p>Here we employ the .slideToggle() function <em>(You can also use .slideUp() or .slideDown())</em></p>
+          <p>Note: this exhibits FuNkY behaviors when you set a min-height on your target element</p>
+          <button id="slidebutton">Toggle the S L I D E</button>
+
         </article>
-        <article>
-          Effects Code
+        <article class="examples effects">
+          <h3>Effect Examples</h3>
+          <div id="displayeffectdiv" style="display: none;">THIS IS A DIVVVV</div>
+          <div id="fadeeffectdiv" style="display: none;">This is DIV NO 2</div>
+          <div id="animateeffectdiv">This is Div No 3</div>
+          <div id="slideeffectdiv" style="background-color: #EE82EE; display: none;">This the Slidy Div</div>
         </article>
       </section>
       <section>
