@@ -33,6 +33,12 @@ h3 {
 .bluebackground {
   background-color: blue !important; }
 
+.clonediv {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-color: #8be69a !important; }
+
 .description button, .examples button {
   display: block;
   box-shadow: 1px 1px #333333; }
@@ -69,3 +75,8 @@ h3 {
   position: relative;
   left: 20px;
   top: 20px; }
+
+#appenddiv {
+  width: 150px;
+  height: 50px;
+  background-color: #8be69a !important; }

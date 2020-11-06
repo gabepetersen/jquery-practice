@@ -7,14 +7,14 @@
   </head>
   <body>
     <header>
-      <h1>All the joyous examples of jQuery!!!</h1>
+      <h1>All the Joyous Examples of jQuery!!!</h1>
       <p>Based on the following documentations: 
         <a target="_blank" href="https://api.jquery.com/">jQuery</a>, 
         <a target="_blank" href="https://www.w3schools.com/jquery/jquery_ref_overview.asp">w3schools</a>, 
         <a target="_blank" href="https://www.snoopcode.com/jquery/">SnoopCode</a>
       </p>
       <br />
-      <p>Note: This might take a few seconds to load</p>
+      <p>Note: It might take a few seconds to load the jquery</p>
       <br />
     </header>
     <main>
@@ -77,7 +77,7 @@
           <div>
             <h4>.on('event', callback(event) {...})</h4>
             <p>.on() event binder is currently the way to bind events to selected elements. All that is needed is to pass the type of event and use the callback to change things. Since JQuery 3.0, all shorthand events are deprecated :(</p><br />
-            <p>To the right we see that the <em>'click', 'mouseenter', 'mouseleave', 'resize', 'scroll', and 'keypress' events are being used</em></p><br />
+            <p>To the right we see that the 'click', 'mouseenter', 'mouseleave', 'resize', 'scroll', and 'keypress' events are being used</p><br />
             <p>Note 1: Instead of keypress, you can also use 'keyup' or 'keydown' for specific button presses</p><br />
             <p>Note 2: to access the data for some event callbacks, you can find a lot of the data in event.originalEvent</p><br />
             <p>Note 3: There are also document events: 'load' and 'ready' that inform about when assets are loaded</p><br />
@@ -103,19 +103,19 @@
       <section>
         <article class="description">
           <h3>Effects (press buttons)</h3>
-          <p>These basically changes display: none to block <em>(you can also use .toggle)</em></p>
+          <p><em>- These basically changes display: none to block (you can also use .toggle)</em></p>
           <button id="showbutton">Show the Div!!!</button>
           <button id="hidebutton">Hide the Div!!</button>
           
-          <p>These basically animates css opacity<em>(you can also use .fadeTo() or .fadeToggle())</em></p>
+          <p><em>- These basically animates css opacity(you can also use .fadeTo() or .fadeToggle())</em></p>
           <button id="fadeinbutton">Fade in second Div</button>
           <button id="fadeoutbutton">Fade out second Div</button>
           
-          <p>You can do incremental animation - using the .animate() property you can apply custom css changes, and with .delay() you can deplay the animations</p>
+          <p><em>You can do incremental animation - using the .animate() property you can apply custom css changes, and with .delay() you can deplay the animations</em></p>
           <button id="animatebutton">Animate the Third Div</button>
           
-          <p>Here we employ the .slideToggle() function <em>(You can also use .slideUp() or .slideDown())</em></p>
-          <p>Note: this exhibits FuNkY behaviors when you set a min-height on your target element</p>
+          <p><em>- Here we employ the .slideToggle() function (You can also use .slideUp() or .slideDown())</em></p>
+          <p><em>- Note: this exhibits FuNkY behaviors when you set a min-height on your target element</em></p>
           <button id="slidebutton">Toggle the S L I D E</button>
 
         </article>
@@ -148,42 +148,54 @@
           <textarea id="csstextexample" class="cooltextbox" placeholder=".cooltextbox"></textarea>
         </article>
       </section>
-      
+
       <section>
-        <article>
-          <h3>DOM and HTML</h3>
-        
+        <article class="description">
+          <h3>HTML</h3>
+          <p>.clone().insertAfter(this) => <strong>click the original square box to generate more</strong></p>
+          <br/>
+          <p><em>This will toggle the elements existence in the DOM - you can .detach() the rectangle box, but you can also use .appendTo() to put it back in the DOM</em></p>
+          <button id="htmldetach">detach() / appendTo(.htmlexamples)</button>
+          <button id="htmlreplace">.replaceWith('&lt;div&gt;This is a Div&lt;/div&gt;')</button>
+          <p><em>- There's also the .replaceAll() and .empty() methods if you wanna do some serious deleting</em></p>
+          <button id="htmlappend">.append('&lt;li&gt;New List Item&lt;/li&gt;')</button>
+          <button id="htmltext">$('#angrydiv').text('I like turtles')</button>
+          <p><em>- One of the most powerful editors is the html method - $('div')(&lt;&gt;&lt;/&gt;) - where you can totally rewrite the html structure of the children of any given element</em></p>
+          <br />
+          <p><em>- This will wrap an element in html tags - or unwrap it conversly</em></p>
+          <button id="htmlwrap">.wrap(&lt;em&gt;&lt;/em&gt;) / .unwrap()</button>
+          <p><em>- There is also .wrapAll() and .wrapInner() if your looking to wrap multiple elements at once</em></p>
+
         </article>
-        <article>
-          <h3>DOM and HTML</h3>
+        <article class="examples htmlexamples">
+          <h3>HTML Examples</h3>
+          <div class="clonediv"></div>
+          <div id="appenddiv">Detach me with the button</div>
+          <br />
+          <p id="replacep">Replace this paragraph with a div!</p>
+          <br />
+          <ul id="appendlist">
+            <li>first list item</li>
+          </ul>
+          <div id="angrydiv">I hate jquery! I'm an angry div</div>
+          <br />
+          <p id="wrappedp">Wrap me in emphasized text pls!</p>
         </article>
       </section>
+
       <section>
         <article>
-          Traversing
-        </article>
-        <article>
-          Traversing Code
-        </article>
-      </section>
-      <section>
-        <article>
-          Misc
+          <h3>Misc</h3>
+          <p>.each()</p>
         </article>
         <article>
           Misc Code
         </article>
       </section>
-      <section>
-        <article>
-          Properties
-        </article>
-        <article>
-          Properties Code
-        </article>
-      </section>
     </main>
     <footer>
+      <br />
+      <p >I am going to ignore Traversing and AJAX examples because I most-likely <em>*knocks on wood*</em> will not use them. Sorry for the messy website, but I hope this can help anyone trying to learn jQuery.</p>
       <p>Thanks for reading!</p>
     </footer>
   </body>

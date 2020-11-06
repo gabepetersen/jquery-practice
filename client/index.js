@@ -23,6 +23,7 @@ function readyJquery() {
   // bind all effects we need for example
   bindEffects();
   bindCSS();
+  bindHTML();
 }
 
 /**
@@ -119,8 +120,44 @@ function bindCSS() {
       $('#csscss').text(`${$('#csstextexample').css('background-color')}`);
     });
     $('#csscss').text(`${$(this).css('background-color')}`);
-  })
-   
+  })  
+}
+
+function bindHTML() {
+  // this will only work for the original box, bc this code is only ran ONCE
+  // in order for it to work on all .clonediv's - you would have to assign
+  // new events listeners for each new .clonediv
+  $('.clonediv').on('click', function() {
+    $(this).clone().insertAfter(this);
+  });
+  var toggleElement;
+  $('#htmldetach').on('click', function() {
+    if(toggleElement) {
+      toggleElement.appendTo('.htmlexamples');
+      toggleElement = null;
+    } else {
+      toggleElement = $('#appenddiv').detach();
+    }
+  });
+  $('#htmlreplace').on('click', function() {
+    $('#replacep').replaceWith('<div>This is a Div!</div>')
+  });
+  $('#htmlappend').on('click', function() {
+    $('#appendlist').append('<li>New List Item</li>')
+  });
+  $('#htmltext').on('click', function() {
+    $('#angrydiv').text('I like turtles');
+  });
+  var paragraph = $('#wrappedp');
+  $('#htmlwrap').on('click', function() {
+    if(paragraph.parent().is('em')) {
+      paragraph.unwrap();
+      paragraph.text('you can wrap me again if you want')
+    } else {
+      paragraph.wrap('<em></em>');
+      paragraph.text('you can unwrap me now')
+    }
+  });
 }
 
 function readyWindow(windowRef) {
