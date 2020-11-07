@@ -24,6 +24,7 @@ function readyJquery() {
   bindEffects();
   bindCSS();
   bindHTML();
+  bindMISC();
 }
 
 /**
@@ -122,7 +123,9 @@ function bindCSS() {
     $('#csscss').text(`${$(this).css('background-color')}`);
   })  
 }
-
+/**
+ * this stuff manipulates the HTML DOM stuff
+ */
 function bindHTML() {
   // this will only work for the original box, bc this code is only ran ONCE
   // in order for it to work on all .clonediv's - you would have to assign
@@ -140,10 +143,10 @@ function bindHTML() {
     }
   });
   $('#htmlreplace').on('click', function() {
-    $('#replacep').replaceWith('<div>This is a Div!</div>')
+    $('#replacep').replaceWith('<div>This is a Div!</div>');
   });
   $('#htmlappend').on('click', function() {
-    $('#appendlist').append('<li>New List Item</li>')
+    $('#appendlist').append('<li>New List Item</li>');
   });
   $('#htmltext').on('click', function() {
     $('#angrydiv').text('I like turtles');
@@ -152,12 +155,34 @@ function bindHTML() {
   $('#htmlwrap').on('click', function() {
     if(paragraph.parent().is('em')) {
       paragraph.unwrap();
-      paragraph.text('you can wrap me again if you want')
+      paragraph.text('you can wrap me again if you want');
     } else {
       paragraph.wrap('<em></em>');
-      paragraph.text('you can unwrap me now')
+      paragraph.text('you can unwrap me now');
     }
   });
+}
+/**
+ * This shows off some miscelanious functionalities
+ */
+function bindMISC() {
+  $('#misceach').on('click', function() {
+    $('#misclist li').each(function() {
+      alert($(this).text());
+    });
+  });
+  $('#miscindex').on('click', function() {
+    alert($('#misclist li:nth-child(2)').index());
+  });
+  $('#miscarray').on('click', function() {
+    alert($('#misclist li').toArray() + " - jumbled html stuff lol")
+  });
+  $('#misclength').on('click', function() {
+    alert('Array Length: ' + $('#misclist li').length);
+  });
+  $('#miscjquery').on('click', function() {
+    alert('Version: ' + $().jquery)
+  })
 }
 
 function readyWindow(windowRef) {
